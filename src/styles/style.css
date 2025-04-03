@@ -20,50 +20,21 @@
   src: url("../fonts/Neucha-Regular.ttf");
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+html {
+  width: 1440px;
 }
 
 body {
-  font-family: "Open Sans";
   font-size: 16px;
   line-height: 1.6em;
   color: var(--dark-color);
+  width: 1440px;
   margin: 0;
-  padding: 0;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: Neucha;
-  line-height: 1.2em;
-}
-
-h1 {
-  font-size: 72px;
-}
-
-h2 {
-  font-size: 60px;
-}
-
-h3 {
-  font-size: 34px;
-}
-
-h4 {
-  font-size: 29px;
-  color: var(--dark-translucent);
-  margin-bottom: 0;
 }
 
 section,
-header {
-  width: 1440px;
+header,
+footer {
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -87,16 +58,88 @@ section::before {
   width: 1110px;
   position: relative;
   text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
   margin: 0 auto;
-  padding: 100px 0;
 }
 
-#preview-image::before {
-  content: '';
-  background-image: none;
+header {
+  background-color: var(--light);
 }
 
-.header-img {
+.paragraph {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+header .paragraph {
+  margin-top: 16px;
+}
+
+li,
+p {
+  text-align: left;
+  font-family: "Open Sans", sans-serif;
+}
+
+h2 {
+  color: var(--main-color);
+  font-size: 60px;
+  line-height: 1.2em;
+  text-align: left;
+  font-family: Neucha, sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+.title {
+  font-family: Neucha, sans-serif;
+  font-weight: 400;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+.title-1 {
+  font-size: 72px;
+  line-height: 1.2em;
+}
+
+.title-2 {
+  font-size: 60px;
+  line-height: 1.2em;
+  text-align: left;
+  font-family: Neucha, sans-serif;
+  color: var(--dark-color);
+}
+
+.title-3 {
+  font-size: 34px;
+  line-height: 1.2em;
+}
+
+.main-title {
+  margin-bottom: 185px;
+}
+
+.paragraph-container {
+  display: flex;
+  flex-direction: row;
+  row-gap: 30px;
+  justify-content: space-between;
+}
+
+.text-column {
+  width: 540px;
+  font-family: "Open Sans", sans-serif;
+  text-align: left;
+}
+
+.text {
+  font-family: "Open Sans", sans-serif;
+}
+
+.header-picture {
   position: absolute;
   top: 55px;
   right: -270px;
@@ -105,48 +148,67 @@ section::before {
   z-index: 0;
 }
 
-.main-title {
-  text-align: left;
-  margin-top: 0;
-  margin-bottom: 185px;
-}
-
-.columns {
-  display: flex;
-  gap: 30px;
-}
-
-.column {
-  width: 540px;
-  text-align: left;
-}
-
-.button-detail {
+.button-link {
   text-decoration: none;
-  color: var(--white);
-  background-color: var(--main-color);
-  padding: 12px 24px;
   font-weight: bold;
-  margin-top: 40px;
   text-transform: uppercase;
+  color: var(--white);
+  padding: 12px 24px;
+  background-color: var(--main-color);
+  margin-top: 40px;
   display: block;
   box-sizing: border-box;
   width: 148px;
 }
 
-.img-prev {
+.title-video {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.video-link {
+  display: block;
   width: 919px;
   height: 517px;
-  /* filter: drop-shadow(0 16px 32px rgba(0 0 0 / 15%)); */
-  margin-top: 30px;
-  margin-bottom: -200px;
+  margin: 0 auto;
+  filter: drop-shadow(0 16px 32px rgba(0 0 0 / 15%));
+  position: relative;
+  top: 30px;
+  z-index: 2;
+}
+
+.video-link-picture {
+  width: 919px;
+  height: 517px;
+  display: block;
+  object-fit: contain;
+}
+
+.color-orange {
+  color: var(--main-color);
+}
+
+.color-white {
+  color: var(--white);
+}
+
+#preview-image {
+  margin-bottom: -170px;
+}
+
+#preview-image .text {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#preview-image::before {
+  content: "";
+  background: none;
 }
 
 #navigation {
   background-color: var(--main-dark-color);
-  margin: 0, auto;
-  padding-top: 200px;
-  padding-bottom: 100px;
+  padding-top: 100px;
 }
 
 #navigation::before {
@@ -154,85 +216,229 @@ section::before {
   background: none;
 }
 
-.block-cards {
+.navlist {
+  list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
+  margin: 0;
+  padding: 0;
+  flex-flow: row wrap;
+  gap: 20px 30px;
 }
 
-.card {
+.navcard {
   width: 350px;
-  height: 323px;
-  background-color: var(--light);
-  padding: 24px;
-  text-align: left;
   box-sizing: border-box;
+  background-color: var(--light);
 }
 
-.title-card {
-  background-color: var(--main-dark-color);
+.navcard .title-3 {
+  color: var(--main-color);
+  margin-bottom: 16px;
+}
+
+.navcard-row2 .title-3 {
+  margin-bottom: 16px;
+}
+
+.navcard a {
+  display: block;
+  text-decoration: none;
   text-align: left;
-  padding: 0;
+  width: 350px;
+  box-sizing: border-box;
+  padding: 24px;
 }
 
-.title-card h2 {
-  font-size: 52px;
-  margin: 0;
-}
-
-.card h3 {
-  padding: 0;
-  margin: 0;
-}
-
-.card p {
-  /* padding: 0; */
-  margin: 0;
-}
-
-.number {
-  font-family: Neucha;
-  font-size: 64px;
-  padding-bottom: 40px;
+.navcard .number {
   line-height: 1em;
+  padding-bottom: 40px;
+  font-size: 64px;
+  font-family: Neucha, sans-serif;
+  color: var(--main-dark-color);
   margin: 0;
 }
 
-.columns-block {
+.navcard:hover {
+  background-color: var(--main-color);
+}
+
+.nav-text {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  color: var(--dark-color);
+  width: 302px;
+  margin: 0;
+}
+
+.navcard-header {
+  background: none;
+  padding: 0;
+}
+
+.navcard-header .title {
+  font-size: 52px;
+}
+
+.supertitle {
+  font-family: Neucha, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  text-align: left;
+  margin: 0;
+}
+
+.annotation {
+  font-family: Neucha, sans-serif;
+  font-weight: 400;
+  font-size: 34px;
+  text-align: left;
+  line-height: 40px;
+  margin-top: 30px;
+}
+
+.info-section-even .supertitle {
+  color: var(--whitetranslusent);
+}
+
+.info-section-even .title,
+.info-section-even .annotation,
+.info-section-even .paragraph {
+  color: var(--white);
+}
+
+.text-head {
+  margin-top: 100px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-bottom: 1px;
+  text-align: left;
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--white);
+  background-color: var(--brown);
+}
+
+.info-section-even .text-head {
+  color: var(--brown);
+  background-color: var(--white);
+}
+
+.navcard:hover .number,
+.navcard:hover .nav-text,
+.navcard:hover .title {
+  color: var(--white);
+}
+
+.info-section-odd {
+  background-color: var(--light);
+}
+
+.info-section-even {
+  background-color: var(--brown);
+}
+
+.head-wrapper {
   display: flex;
+  flex-direction: row;
   gap: 30px;
 }
 
-.columns-block div {
+.head-wrapper-even {
+  flex-direction: row-reverse;
+}
+
+.head-image {
+  box-shadow: 0 16px 32px 0 rgb(0 0 0 / 15%);
+}
+
+.info-section-title {
+  margin: 0;
+}
+
+.text-wrapper {
+  margin: 0;
+}
+
+.subscribe-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--main-dark-color);
+}
+
+.subscribe-text {
+  font-family: Neucha, sans-serif;
+  font-size: 34px;
+  font-weight: 400;
   text-align: left;
-}
-
-img {
-  filter: drop-shadow(0 16px 32px rgba(0 0 0 / 15%));
-}
-
-.phrase-brown {
-  background-color: var(--brown);
   color: var(--white);
+  margin: 55px;
+  line-height: 1.2;
+}
+
+.subscribe-form {
   text-align: left;
-  margin-top: 100px;
+  margin: 42px 57px;
+  line-height: 1.2;
+  font-family: "Open Sans", sans-serif;
 }
 
-.column {
-  width: 540px;
-  height: 125px;
-  margin-top: 20px;
+.input-label {
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 10px;
 }
 
-.orange {
-  color: var(--main-color);
+.input-block {
+  display: flex;
+  flex-direction: row;
 }
 
-.dark {
-  color: var(--dark-color);
+#mail-input {
+  height: 50px;
+  min-width: 423px;
+  box-sizing: border-box;
 }
 
-.light {
-  color: var(--light);
+.mail-button {
+  width: 60px;
+  height: 50px;
+  background-color: var(--main-color);
+  border: none;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.mail-text {
+  font-size: 12px;
+  color: var(--white);
+  margin: 0;
+  margin-top: 5px;
+}
+
+.mail-link {
+  color: var(--white);
+}
+
+.author {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  margin-top: 60px;
+}
+
+.source {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+
+.hexlet-link {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
 }
