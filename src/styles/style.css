@@ -20,6 +20,12 @@
   src: url("../fonts/Neucha-Regular.ttf");
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Open Sans";
   font-size: 16px;
@@ -31,7 +37,8 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: Neucha;
   line-height: 1.2em;
 }
@@ -48,7 +55,13 @@ h3 {
   font-size: 34px;
 }
 
-main,
+h4 {
+  font-size: 29px;
+  color: var(--dark-translucent);
+  margin-bottom: 0;
+}
+
+section,
 header {
   width: 1440px;
   text-align: center;
@@ -56,7 +69,8 @@ header {
   overflow: hidden;
 }
 
-header::before {
+header::before,
+section::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -75,6 +89,11 @@ header::before {
   text-align: center;
   margin: 0 auto;
   padding: 100px 0;
+}
+
+#preview-image::before {
+  content: '';
+  background-image: none;
 }
 
 .header-img {
@@ -118,7 +137,7 @@ header::before {
 .img-prev {
   width: 919px;
   height: 517px;
-  filter: drop-shadow(0 16px 32px rgba(0 0 0 / 15%));
+  /* filter: drop-shadow(0 16px 32px rgba(0 0 0 / 15%)); */
   margin-top: 30px;
   margin-bottom: -200px;
 }
@@ -128,6 +147,11 @@ header::before {
   margin: 0, auto;
   padding-top: 200px;
   padding-bottom: 100px;
+}
+
+#navigation::before {
+  content: "";
+  background: none;
 }
 
 .block-cards {
@@ -143,20 +167,27 @@ header::before {
   background-color: var(--light);
   padding: 24px;
   text-align: left;
+  box-sizing: border-box;
 }
 
 .title-card {
   background-color: var(--main-dark-color);
-  padding: 0;
   text-align: left;
+  padding: 0;
 }
 
 .title-card h2 {
   font-size: 52px;
+  margin: 0;
 }
 
 .card h3 {
   padding: 0;
+  margin: 0;
+}
+
+.card p {
+  /* padding: 0; */
   margin: 0;
 }
 
@@ -168,10 +199,40 @@ header::before {
   margin: 0;
 }
 
+.columns-block {
+  display: flex;
+  gap: 30px;
+}
+
+.columns-block div {
+  text-align: left;
+}
+
+img {
+  filter: drop-shadow(0 16px 32px rgba(0 0 0 / 15%));
+}
+
+.phrase-brown {
+  background-color: var(--brown);
+  color: var(--white);
+  text-align: left;
+  margin-top: 100px;
+}
+
+.column {
+  width: 540px;
+  height: 125px;
+  margin-top: 20px;
+}
+
 .orange {
   color: var(--main-color);
 }
 
 .dark {
   color: var(--dark-color);
+}
+
+.light {
+  color: var(--light);
 }
